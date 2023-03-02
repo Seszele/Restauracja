@@ -1,0 +1,44 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="home">
+        <mat-icon>home</mat-icon> Strona główna
+      </a>
+      <a mat-list-item routerLink="menu">
+        <mat-icon>restaurant_menu</mat-icon> Aktualne menu
+      </a>
+      <a [hideIfUnauthorized]="['klient']" *ngIf="currentUser!=null" mat-list-item routerLink="cart">
+        <mat-icon>shopping_cart</mat-icon> Koszyk
+      </a>
+      <a [hideIfUnauthorized]="['menager','admin']" *ngIf="currentUser!=null" mat-list-item routerLink="add">
+        <mat-icon>add_circle_outline</mat-icon> Dodaj danie
+      </a>
+      <a [hideIfUnauthorized]="['admin']" *ngIf="currentUser!=null" mat-list-item routerLink="admin-panel">
+        <mat-icon>admin_panel_settings</mat-icon> Panel Administratora
+      </a>
+      <a *ngIf="currentUser==null" mat-list-item routerLink="login">
+        <mat-icon>login</mat-icon> Login
+      </a>
+      <a *ngIf="currentUser!=null" mat-list-item routerLink="logout">
+        <mat-icon>logout</mat-icon> Logout
+      </a>
+      <a *ngIf="currentUser==null" mat-list-item routerLink="register">
+        <mat-icon>person_add_alt</mat-icon> Załóż konto
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="header-content">
+        <span>Restauracja On-line</span>
+        <span class="userName">{{(currentUser)?currentUser.email+" role: "+currentUser.roles:''}}</span>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

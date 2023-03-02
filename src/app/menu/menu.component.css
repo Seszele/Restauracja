@@ -1,0 +1,12 @@
+.main-body {
+  display: flex;
+  margin-left: 1%;
+}
+.pagination-box {
+  display: flex;
+  justify-content: center;
+}
+.items-pagination-input {
+  width: 60px;
+  height: auto;
+}

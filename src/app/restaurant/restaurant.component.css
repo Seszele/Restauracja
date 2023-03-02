@@ -1,0 +1,52 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  padding-top: 30px;
+  text-align: center;
+  /* font-weight: bold; */
+  font-size: xx-large;
+}
+.contactInfo {
+  padding-top: 30px;
+  padding-left: 20px;
+  /* text-align: center; */
+  /* font-weight: bold; */
+  font-size: x-large;
+}
+.info {
+  margin-bottom: 20px;
+}
+.dashboard-card-contact {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  background: url("https://static.wixstatic.com/media/59a6f0_a4ce039a89334b599a2df770887c139d~mv2.png/v1/fill/w_640,h_382,al_c,q_85,usm_0.66_1.00_0.01/59a6f0_a4ce039a89334b599a2df770887c139d~mv2.webp")
+    no-repeat center;
+  background-size: cover;
+  color: #fff;
+}
+.test{
+  border: 1px solid pink;
+  background: url("https://ak.picdn.net/shutterstock/videos/22276051/thumb/10.jpg")
+    no-repeat center;
+  background-size: cover;
+}
+/* https://static.wixstatic.com/media/59a6f0_a4ce039a89334b599a2df770887c139d~mv2.png/v1/fill/w_640,h_382,al_c,q_85,usm_0.66_1.00_0.01/59a6f0_a4ce039a89334b599a2df770887c139d~mv2.webp */

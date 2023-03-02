@@ -1,0 +1,22 @@
+<form action="" (ngSubmit)="onSubmit()" #form="ngForm" class="form-box" [formGroup]="myform">
+    <div class="reg-form">
+        <h2>Załóż nowe konto</h2>
+        <mat-form-field class="email-field" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input placeholder="JohnDoe@gmail.com" formControlName="email" matInput required>
+            <mat-error
+                *ngIf="(myform.controls['email'].invalid) && (myform.controls['email'].dirty || myform.controls['email'].touched)">
+                Podaj poprawny email
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field class="password-field" appearance="fill">
+            <mat-label>Hasło</mat-label>
+            <input type="password" formControlName="password" matInput>
+            <mat-error
+                *ngIf="(myform.controls['password'].invalid) && (myform.controls['password'].dirty || myform.controls['password'].touched)">
+                Hasło musi mieć <strong>6-20</strong> znaków
+            </mat-error>
+        </mat-form-field>
+        <button class="btn" mat-raised-button color="primary" type="submit">Załóż konto</button>
+    </div>
+</form>

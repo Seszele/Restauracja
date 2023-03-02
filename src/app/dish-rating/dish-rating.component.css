@@ -1,0 +1,9 @@
+p {
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+.button-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}

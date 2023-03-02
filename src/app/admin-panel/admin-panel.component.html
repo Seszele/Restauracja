@@ -1,0 +1,13 @@
+<edit-user *ngFor="let user of users" [userID]="user"></edit-user>
+<br>
+<mat-card>
+    <mat-card-title>Zmień persystencje</mat-card-title>
+    <mat-card-subtitle>Zmień role</mat-card-subtitle>
+    <mat-card-actions>
+        <mat-button-toggle-group name="roles" value="local">
+            <mat-button-toggle value="local">LOCAL</mat-button-toggle>
+            <mat-button-toggle value="session">SESSION</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button color="primary" mat-raised-button [disabled]='false' (click)="changePersistance()">Aktualizuj</button>
+    </mat-card-actions>
+</mat-card>

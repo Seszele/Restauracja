@@ -1,0 +1,37 @@
+<form action="" (ngSubmit)="onSubmit();form.resetForm(initialValues)" #form="ngForm" class="form-box"
+    [formGroup]="myform">
+    <mat-form-field appearance="fill">
+        <mat-label>Nazwa Dania</mat-label>
+        <input placeholder="Np. zupa pomidorowa" formControlName="name" matInput required>
+        <mat-error *ngIf="name.errors?.['minlength'] && (name.invalid) && (name.dirty || name.touched)">
+            Nazwa musi mieć conajmniej <strong>4 znaki</strong> długości
+        </mat-error>
+    </mat-form-field>
+
+    <chip-select [label]="'Wybierz kuchnie'" [baseChips]="dishData.cuisine()" (chipsChanged)="changeCuisine($event)"
+        [appearance]="'fill'"></chip-select>
+
+    <chip-select [label]="'Wybierz kategorie'" [baseChips]="dishData.categories()"
+        (chipsChanged)="changeCategories($event)" [appearance]="'fill'"></chip-select>
+
+    <chip-select [label]="'Wybierz składniki'" [baseChips]="dishData.ingredients()"
+        (chipsChanged)="changeIngredients($event)" [appearance]="'fill'"></chip-select>
+    <mat-form-field appearance="fill">
+        <mat-label>Maksymalna ilość</mat-label>
+        <input type="number" placeholder="Np. 20" formControlName="quantity" min="0" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Cena</mat-label>
+        <input type="number" placeholder="Np. 10" formControlName="price" min="0" matInput>
+        <span matPrefix>$&nbsp;</span>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Zdjęcia</mat-label>
+        <input formControlName="photos" matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Opis</mat-label>
+        <textarea formControlName="description" matInput></textarea>
+    </mat-form-field>
+    <button mat-flat-button color="primary" type="submit">Dodaj Danie</button>
+</form>

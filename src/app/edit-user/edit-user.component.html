@@ -1,0 +1,16 @@
+<mat-card>
+    <mat-card-title>{{email}}</mat-card-title>
+    <mat-card-subtitle>Zmień role</mat-card-subtitle>
+    <mat-card-actions>
+        <mat-button-toggle-group [formControl]="rolesControl" name="roles" multiple>
+            <mat-button-toggle value="klient">Klient</mat-button-toggle>
+            <mat-button-toggle value="menager">Menager</mat-button-toggle>
+            <mat-button-toggle value="admin">Admin</mat-button-toggle>
+
+        </mat-button-toggle-group>
+        <mat-button-toggle-group [(ngModel)]="isBanned" name="ban" multiple>
+            <mat-button-toggle [value]='true'>Ban</mat-button-toggle>
+        </mat-button-toggle-group>
+        <button color="primary" mat-raised-button [disabled]='disabled' (click)="submit()">Aktualizuj</button>
+    </mat-card-actions>
+</mat-card>

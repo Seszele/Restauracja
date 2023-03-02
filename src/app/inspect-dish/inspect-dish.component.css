@@ -1,0 +1,103 @@
+.grid-container {
+  margin: 20px;
+}
+
+.dashboard-card {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+}
+.rating-display-icon {
+  vertical-align: sub;
+}
+.title {
+  font-size: 28px;
+  text-align: center;
+}
+.cuisine {
+  font-size: 16px;
+}
+.mat-card-subtitle {
+  font-size: 16px;
+}
+.rate-button {
+  margin-bottom: auto;
+  margin-left: auto;
+  float: right;
+  height: 40px;
+}
+.icon-button {
+  transform: scale(2);
+}
+.mat-icon-button {
+  margin-right: 10px;
+}
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-left: 10px;
+}
+.buttons {
+  padding-left: 12px;
+}
+.shopping-icon {
+  position: absolute;
+  right: 130px;
+  top: 29px;
+}
+.content {
+  padding-left: 10px;
+  font-size: 18px;
+}
+.money {
+  font-size: 18px;
+}
+.slider-button-left,
+.slider-button-right {
+  top: 50%;
+  display: absolute;
+  z-index: 100;
+  right: 0px;
+  transform: scale(2);
+}
+.slider-button-left {
+  left: 0px;
+}
+.slider-button-right {
+  position: absolute;
+  right: 0px;
+}
+.arrow-icon {
+  border-radius: 200%;
+  background-color: rgba(236, 236, 236, 0.2);
+  padding: 8px;
+}
+.form-box {
+  display: flex;
+  flex-direction: column;
+}
+.description-field {
+  height: 90px;
+}
+.title-field {
+  width: 60%;
+}
+.nick-field {
+  width: 20%;
+}
+.date-field {
+  width: 20%;
+}
+.review-card {
+  width: 40%;
+}
+.review-box {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+}

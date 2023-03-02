@@ -1,0 +1,77 @@
+.mat-card-image {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+[hidden] {
+  display: none !important;
+}
+.imgClass{
+  cursor: pointer
+}
+
+.starButton {
+  position: absolute;
+  top: 0px;
+  left: 5px;
+  z-index: 100;
+  padding: 0;
+  margin: 0;
+}
+.material-icons-two-tone {
+  font-size: 30px;
+}
+.mat-card-content p {
+  font-size: larger;
+  color: warn;
+}
+.mat-badge-content {
+  font-family: "Material Icons";
+  text-align: center;
+  padding-top: 7px;
+  height: 33px;
+  width: 40px;
+  font-size: 24px;
+  transform: rotate(0.03deg);
+}
+.mat-badge-content:hover {
+  padding-top: 100px;
+}
+.rating-display-icon {
+  vertical-align: sub;
+}
+.example-card {
+  width: fit-content;
+  transition: 0.3s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 2, 0.527);
+  overflow: hidden;
+}
+.example-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.icon-button {
+  transform: scale(2);
+}
+
+.mat-icon-button {
+  margin-right: 10px;
+}
+.mat-card-subtitle {
+  font-size: 16px;
+}
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 0;
+}
+.mini-cart {
+  padding: 0;
+  margin: 0;
+}
+.shopping-icon {
+  padding: 0;
+  margin: 0;
+  margin-top: 12px;
+  margin-right: 15px;
+}

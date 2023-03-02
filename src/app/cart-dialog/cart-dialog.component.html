@@ -1,0 +1,7 @@
+<h1>Koszyk</h1>
+<div>
+    <p *ngIf="dishes.length === 0">Pusty</p>
+    <p *ngFor="let dish of dishes">{{dishName(dish) | titlecase}} {{dish[0].price |currency}}
+        {{dishNumber(dish)}}</p>
+    <p *ngIf="dishes.length !== 0">Suma: {{total() | currency}} {{sumDishes()}}</p>
+</div>

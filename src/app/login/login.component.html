@@ -1,0 +1,52 @@
+<div class="box">
+    <form action="" (ngSubmit)="onSubmit()" #form="ngForm" class="form-box" [formGroup]="myform">
+        <div class="reg-form">
+            <h2>Zaloguj się na swoje konto</h2>
+            <h4 *ngIf="!isValid">Niepoprawny email lub hasło</h4>
+            <mat-form-field class="email-field" appearance="fill">
+                <mat-label>Email</mat-label>
+                <input type="email" placeholder="JohnDoe@gmail.com" formControlName="email" matInput required>
+                <mat-error
+                    *ngIf="(myform.controls['email'].invalid) && (myform.controls['email'].dirty || myform.controls['email'].touched)">
+                    Podaj poprawny email
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="password-field" appearance="fill">
+                <mat-label>Hasło</mat-label>
+                <input type="password" formControlName="password" matInput>
+                <mat-error
+                    *ngIf="(myform.controls['password'].invalid) && (myform.controls['password'].dirty || myform.controls['password'].touched)">
+                    Hasło musi mieć <strong>4-20</strong> znaków
+                </mat-error>
+            </mat-form-field>
+            <button class="btn" mat-raised-button color="primary" type="submit">Zaloguj</button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <mat-card class="pass">
+        <mat-card-title>Admin:</mat-card-title>
+        <mat-card-content>
+            <p>Hasło: admin@gmail.com</p>
+            <p>Login: admin@gmail.com</p>
+        </mat-card-content>
+    </mat-card>
+    <br>
+    <br>
+    <mat-card class="pass">
+        <mat-card-title>Menager:</mat-card-title>
+        <mat-card-content>
+            <p>Hasło: menager@gmail.com</p>
+            <p>Login: menager@gmail.com</p>
+        </mat-card-content>
+    </mat-card>
+    <br>
+    <br>
+    <mat-card class="pass">
+        <mat-card-title>Klient:</mat-card-title>
+        <mat-card-content>
+            <p>Hasło: klient@gmail.com</p>
+            <p>Login: klient@gmail.com</p>
+        </mat-card-content>
+    </mat-card>
+</div>

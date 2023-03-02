@@ -1,0 +1,139 @@
+<button mat-raised-button color="accent" class="back-button" routerLink="/menu">
+    <mat-icon>arrow_back</mat-icon>
+    Powrót do menu
+</button>
+<div class="grid-container">
+    <mat-grid-list cols="2" rowHeight="350px">
+        <mat-grid-tile [colspan]="1" [rowspan]="2">
+            <mat-card class="dashboard-card">
+                <img mat-card-image src="assets\dishes\{{ dish.photos[photoIndex%dish.photos.length] }}" alt="danie">
+                <mat-card-content class="dashboard-card">
+                    <button mat-icon-button class="slider-button-left" (click)="getPrevPhoto()">
+                        <mat-icon color="accent" class="arrow-icon">arrow_back_ios_new</mat-icon>
+                    </button>
+                    <button mat-icon-button class="slider-button-right" (click)="getNextPhoto()">
+                        <mat-icon color="accent" class="arrow-icon">arrow_forward_ios_new</mat-icon>
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+        <!--  -->
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="dashboard-card">
+                <mat-card-header>
+                    <mat-card-title class="title">
+                        {{dish.name | titlecase}}
+                    </mat-card-title>
+                    <mat-card-subtitle>Kuchnia {{dish.cuisine | titlecase}}&nbsp;&nbsp;
+                        {{dishInfo.getRating()|number:'1.0-2'}}
+                        <mat-icon class="rating-display-icon">star
+                        </mat-icon>
+                    </mat-card-subtitle>
+
+                    <mat-icon matBadge={{dishInfo.inCart}} matBadgeColor="warn" class="shopping-icon">
+                        shopping_basket
+                    </mat-icon>
+                    <button [disabled]="cartData.getDishCount(dish)==0 || voted" mat-raised-button class="rate-button"
+                        color="primary" (click)="openRatingDialog()">
+                        <mat-icon>star</mat-icon>
+                        Oceń
+                    </button>
+                </mat-card-header>
+                <mat-card-content class="content">
+                    <mat-chip-list class="chip-list">
+                        <span>&nbsp;&nbsp;Kategorie: </span>
+                        <mat-chip *ngFor="let category of dish.categories" color="accent" selected>{{category}}
+                        </mat-chip>
+                    </mat-chip-list>
+                    <mat-chip-list class="chip-list">
+                        <span>&nbsp;&nbsp;Składniki: </span>
+                        <mat-chip *ngFor="let ingredient of dish.ingredients" color="primary" selected>{{ingredient}}
+                        </mat-chip>
+                    </mat-chip-list>
+                    <p>Opis: {{dish.description}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <div class="buttons">
+                        <button mat-icon-button aria-label color="primary" (click)="removeFromBasket()"
+                            [disabled]="inCart==0">
+                            <mat-icon aria-hidden="false" class="icon-button" md-inactive>
+                                indeterminate_check_box</mat-icon>
+                        </button>
+                        <button mat-icon-button aria-label color="primary" (click)="addToBasket()"
+                            [disabled]="dish.quantity==0">
+                            <mat-icon aria-hidden="false" class="icon-button" md-inactive>add_box
+                            </mat-icon>
+                        </button>
+                        <span class="money">{{ dish.price | currency }}&nbsp;&nbsp;</span>
+                    </div>
+
+
+                </mat-card-actions>
+            </mat-card>
+
+        </mat-grid-tile>
+        <!--  -->
+        <mat-grid-tile [colspan]="1" [rowspan]="1">
+            <mat-card class="dashboard-card">
+                <mat-card-header>
+                    <mat-card-title class="review-intro">
+                        Dodaj recenzje
+                    </mat-card-title>
+                </mat-card-header>
+
+                <mat-card-content>
+                    <form action="" (ngSubmit)="onSubmit()" #form="ngForm" class="form-box" [formGroup]="myform">
+                        <div>
+                            <mat-form-field class="title-field" appearance="fill">
+                                <mat-label>Tytuł</mat-label>
+                                <input placeholder="np. Najlepsza zupa jaką jadłem!" formControlName="title" matInput
+                                    required>
+                                <mat-error
+                                    *ngIf="(myform.controls['title'].invalid) && (myform.controls['title'].dirty || myform.controls['title'].touched)">
+                                    Tytuł musi mieć między <strong>4 znaki</strong> długości
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="nick-field" appearance="fill">
+                                <mat-label>Nick</mat-label>
+                                <input placeholder="np. NoobSlayer42" formControlName="nick" matInput required>
+                                <mat-error
+                                    *ngIf="(myform.controls['nick'].invalid) && (myform.controls['nick'].dirty || myform.controls['nick'].touched)">
+                                    Podaj poprawny nick
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class="date-field" appearance="fill">
+                                <mat-label>Data zakupu</mat-label>
+                                <input matInput [matDatepicker]="picker1" formControlName="date">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Treść</mat-label>
+                            <textarea class="description-field" formControlName="description" matInput></textarea>
+                            <mat-error
+                                *ngIf="(myform.controls['description'].invalid) && (myform.controls['description'].dirty || myform.controls['description'].touched)">
+                                Opis musi mieć między 50 a 500 znaków
+                            </mat-error>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" type="submit">Wyślij</button>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+
+    </mat-grid-list>
+    <div class="review-box">
+        <mat-card class="review-card" *ngFor="let review of reviews">
+            <mat-card-header>
+                <mat-card-title>{{review.title}}</mat-card-title>
+                <mat-card-subtitle *ngIf="review.date == null">Autor: {{review.nick}}</mat-card-subtitle>
+                <mat-card-subtitle *ngIf="review.date != null">Autor: {{review.nick}}, data zakupu: {{review.date|date}}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{review.description}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

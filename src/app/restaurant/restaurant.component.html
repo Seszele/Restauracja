@@ -1,0 +1,31 @@
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card" [ngClass]="{'test':!card.backgroundImage}">
+        <mat-card-header>
+          <mat-card-title>
+            {{card.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>{{card.content}}</div>
+          <img *ngIf="card.backgroundImage == true" src='assets\map.jpg' width={{card.width}} alt="" srcset="">
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="infoCard.cols" [rowspan]="infoCard.rows">
+      <mat-card class="dashboard-card-contact">
+        <mat-card-header>
+          <mat-card-title>
+            {{infoCard.title}}
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="contactInfo">
+          <div class="info">Telefon: {{contactInfo.phone}}</div>
+          <div class="info">E-mail: {{contactInfo.email}}</div>
+          <div class="info">Gadu-gadu: {{contactInfo.gg}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

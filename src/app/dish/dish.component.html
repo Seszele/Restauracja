@@ -1,0 +1,41 @@
+<mat-card class="example-card" [ngStyle]="{'box-shadow': '0px 4px 8px 0px '+shadowColour}">
+    <mat-card-header></mat-card-header>
+    <div matBadge="priority_high" [matBadgeHidden]="(dish.quantity>3)||(dish.quantity==0)" matBadgeSize="large"
+        matBadgeOverlap="true" matBadgeColor="warn">
+        <img class="imgClass" [disableIfUnauthorized]="['klient','menager','admin']"
+            [routerLink]="['/menu/dish',dish.id]" mat-card-image
+            [style.filter]="(dish.quantity==0)?'grayscale(100%)':'grayscale(0%)'"
+            src="assets\dishes\{{ dish.photos[0] }}" width="300px" height="300px" alt="Photo of a dish" />
+    </div>
+    <!-- Content -->
+    <mat-card-title>{{ dish.name | titlecase }}
+    </mat-card-title>
+    <mat-card-subtitle>Kuchnia {{dish.cuisine | titlecase}}&nbsp;&nbsp; {{dishInfo.getRating()|number:'1.0-2'}}
+        <mat-icon class="rating-display-icon">star</mat-icon>
+    </mat-card-subtitle>
+    <mat-card-content>
+        <p>{{ dish.price | currency }} </p>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <div [hideIfUnauthorized]="['klient','menager','admin']" class="buttons">
+            <button [hideIfUnauthorized]="['klient','menager','admin']" mat-icon-button aria-label color="primary"
+                (click)="removeFromBasket()" [disabled]="inCart==0">
+                <mat-icon aria-hidden="false" class="icon-button" md-inactive>
+                    indeterminate_check_box</mat-icon>
+            </button>
+            <button [hideIfUnauthorized]="['klient','menager','admin']" mat-icon-button aria-label color="primary"
+                (click)="addToBasket()" [disabled]="dish.quantity==0">
+                <mat-icon aria-hidden="false" class="icon-button" md-inactive>add_box
+                </mat-icon>
+            </button>
+        </div>
+        <div [hideIfUnauthorized]="['klient','menager','admin']" class="mini-cart">
+
+            <mat-icon matBadge={{inCart}} matBadgeColor="warn" class="shopping-icon">
+                shopping_basket
+            </mat-icon>
+        </div>
+
+    </mat-card-actions>
+</mat-card>

@@ -1,0 +1,12 @@
+<h3>Cena</h3>
+<ngx-slider [(value)]="filterData.minPrice" [(highValue)]="filterData.maxPrice" [options]="priceSliderOptions">
+</ngx-slider>
+<h3>Ocena</h3>
+<ngx-slider [(value)]="filterData.minRating" [(highValue)]="filterData.maxRating" [options]="ratingSliderOptions">
+</ngx-slider>
+<h3>Kuchnia</h3>
+<chip-select [label]="'Wybierz kategorie'" [baseChips]="dishData.cuisine()"
+    (chipsChanged)="changeFilteredCuisine($event)" [placeholder]="'lub...'"></chip-select>
+<h3>Kategorie</h3>
+<chip-select [label]="'Wybierz kategorie'" [baseChips]="dishData.categories()"
+    (chipsChanged)="changeFilteredCategories($event)" [placeholder]="'i...'"></chip-select>

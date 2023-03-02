@@ -1,0 +1,187 @@
+[
+  {
+    "id": 1,
+    "name": "kitakata ramen",
+    "cuisine": "japońska",
+    "categories": [
+      "zupa",
+      "mięsny",
+      "danie główne"
+    ],
+    "ingredients": [
+      "sos sojowy",
+      "makaron udon",
+      "rosół wieprzowy"
+    ],
+    "quantity": 10,
+    "price": 20,
+    "photos": [
+      "ramen1.jpg",
+      "burger1.jpg",
+      "salad1.jpg"
+    ],
+    "description": "Ut sunt fugiat veniam pariatur deserunt ipsum in minim sunt amet nulla et veniam sunt. Quis proident ullamco voluptate et. Proident veniam elit excepteur ut veniam nostrud aliquip aliqua laborum.\r\n"
+  },
+  {
+    "id": 2,
+    "name": "tosty z jajkiem",
+    "cuisine": "polska",
+    "categories": [
+      "wegetariańskie",
+      "śniadanie",
+      "kanapka"
+    ],
+    "ingredients": [
+      "jajko",
+      "chleb"
+    ],
+    "quantity": 50,
+    "price": 5,
+    "photos": [
+      "egg-toast1.jpg",
+      "example1.jpg",
+      "example2.jpg",
+      "example3.jpg"
+    ],
+    "description": "Deserunt amet sit est excepteur. Labore quis ea sit laborum nostrud consequat adipisicing ex laboris proident eu. Ut irure anim magna sit. Adipisicing irure sint voluptate ea.\r\n"
+  },
+  {
+    "id": 3,
+    "name": "spaghetti carbonara",
+    "cuisine": "włoska",
+    "categories": [
+      "mięsny",
+      "danie główne",
+      "makaron"
+    ],
+    "ingredients": [
+      "bekon",
+      "parmezan"
+    ],
+    "quantity": 20,
+    "price": 17,
+    "photos": [
+      "carbonara1.jpg"
+    ],
+    "description": "Exercitation tempor nisi sunt id officia pariatur ut sint qui sunt. Adipisicing in do do amet anim dolor officia duis. Deserunt aliqua sint consectetur mollit in proident aliquip.\r\n"
+  },
+  {
+    "id": 4,
+    "name": "pierogi z borówkami",
+    "cuisine": "polska",
+    "categories": [
+      "wegetariańskie",
+      "danie główne",
+      "śniadanie"
+    ],
+    "ingredients": [
+      "borówki"
+    ],
+    "quantity": 50,
+    "price": 10,
+    "photos": [
+      "pierogi1.jpg"
+    ],
+    "description": "Proident ea dolor anim eiusmod mollit labore culpa anim elit nostrud dolor culpa nostrud. Pariatur consectetur dolor proident anim proident in adipisicing irure dolore excepteur. Dolor quis et cillum pariatur eu.\r\n"
+  },
+  {
+    "id": 5,
+    "name": "burger wołowy",
+    "cuisine": "amerykańska",
+    "categories": [
+      "mięsny",
+      "danie główne"
+    ],
+    "ingredients": [
+      "wołowina",
+      "sos tysiąca wysp",
+      "pomidor",
+      "ser cheddar"
+    ],
+    "quantity": 30,
+    "price": 25,
+    "photos": [
+      "burger1.jpg"
+    ],
+    "description": "Nisi tempor nisi sunt id officia pariatur ut sint qui sunt. Adipisicing in do do amet anim dolor officia duis. Deserunt aliqua sint consectetur mollit in proident aliquip.\r\n"
+  },
+  {
+    "id": 6,
+    "name": "zupa z owocami morza",
+    "cuisine": "włoska",
+    "categories": [
+      "owoce morza",
+      "danie główne",
+      "zupa"
+    ],
+    "ingredients": [
+      "owoce morza"
+    ],
+    "quantity": 10,
+    "price": 30,
+    "photos": [
+      "clam-soup1.jpg"
+    ],
+    "description": "Tiris tempor nisi sunt id officia pariatur ut sint qui sunt. Adipisicing in do do amet anim dolor officia duis. Deserunt aliqua sint consectetur mollit in proident aliquip.\r\n"
+  },
+  {
+    "id": 7,
+    "name": "łosoś curry",
+    "cuisine": "indyjska",
+    "categories": [
+      "ryba",
+      "danie główne"
+    ],
+    "ingredients": [
+      "łosoś",
+      "curry"
+    ],
+    "quantity": 0,
+    "price": 20,
+    "photos": [
+      "curry-salmon1.jpg"
+    ],
+    "description": "Salmono tempor nisi sunt id officia pariatur ut sint qui sunt. Adipisicing in do do amet anim dolor officia duis. Deserunt aliqua sint consectetur mollit in proident aliquip.\r\n"
+  },
+  {
+    "id": 8,
+    "name": "sałatka cezar",
+    "cuisine": "włoska",
+    "categories": [
+      "sałatka",
+      "wegetariańskie",
+      "danie główne"
+    ],
+    "ingredients": [
+      "sałata"
+    ],
+    "quantity": 15,
+    "price": 23,
+    "photos": [
+      "salad1.jpg"
+    ],
+    "description": "Brutus tempor nisi sunt id officia pariatur ut sint qui sunt. Adipisicing in do do amet anim dolor officia duis. Deserunt aliqua sint consectetur mollit in proident aliquip.\r\n"
+  },
+  {
+    "id": 9,
+    "name": "krewetkowy ramen",
+    "cuisine": "japońska",
+    "categories": [
+      "zupa",
+      "owoce morza",
+      "danie główne"
+    ],
+    "ingredients": [
+      "sos sojowy",
+      "makaron udon",
+      "rosół wieprzowy",
+      "krewetki"
+    ],
+    "quantity": 40,
+    "price": 20,
+    "photos": [
+      "ramen1.jpg"
+    ],
+    "description": "ramro tempor nisi sunt id officia pariatur ut sint qui sunt. Adipisicing in do do amet anim dolor officia duis. Deserunt aliqua sint consectetur mollit in proident aliquip.\r\n"
+  }
+]

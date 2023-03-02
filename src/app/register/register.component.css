@@ -1,0 +1,22 @@
+.btn{
+    width: 100px;
+}
+.reg-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    align-items: center;
+}
+.form-box{
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.password-field{
+    width: 400px;
+}
+.email-field {
+    width: 400px;
+}
+

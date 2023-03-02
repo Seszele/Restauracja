@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="flex-box" *ngIf="loaded">
+    <ng-container
+      *ngFor="let dish of dishes | filterDish : filterData.minPrice : filterData.maxPrice : filterData.minRating : filterData.maxRating :filterData.categories:filterData.cuisine | paginate: { itemsPerPage: itemsPerPage, currentPage: page }">
+      <dish [dishInfo]="dish" [pricingType]="dish.pricing" *ngIf="!dish.deleted" (dishPicked)="dishPicked($event)"
+        (dishRemoved)="dishRemoved($event)">
+      </dish>
+    </ng-container>
+  </div>
+</div>
